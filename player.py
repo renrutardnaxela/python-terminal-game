@@ -1,6 +1,14 @@
-class Player:
-    def __init__ (self, player_hp, player_sneak, player_attack, player_defend):
-        self.player_hp = player_hp
-        self.player_sneak = player_sneak
-        self.player_attack = player_attack
-        self.player_defend = player_defend
+class GamePlayer:
+    def __init__(self, playerHP, damage):
+        self.playerHP = playerHP
+        self.damage = damage
+
+    def print_player_stats(self):
+        print('============')
+        print('Monster: You')
+        print(f'HP: {self.playerHP}')
+        print(f'Damage: {self.damage}')
+        print('============')
+
+    def change_playerHP(self, attack):
+        self.playerHP -= attack
