@@ -1,13 +1,16 @@
-from random import random
-
 class Monster:
-    def __init__ (self, hp, sneak, attack, defend):
-        self.hp = hp
-        self.sneak = sneak
+    def __init__(self, name, monsterHP, attack, defend, sneak):
+        self.name = name
+        self.monsterHP = monsterHP
         self.attack = attack
         self.defend = defend
+        self.sneak = sneak
 
-    def monster_choice():
-        monster_moves = ['sneak', 'attack', 'defend']
-        monster_decides = random.choice(monster_moves)
-        return monster_decides
+    def print_monster_stats(self):
+        print('============')
+        print(f'Monster: {self.name}')
+        print(f'HP: {self.monsterHP}')
+        print('============')
+
+    def change_monsterlHP(self, damage):
+        self.monsterHP -= damage
